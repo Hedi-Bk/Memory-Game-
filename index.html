@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>~~MemmoryGame~~</title>
+    <!-- Font Awssome Library  -->
+    <link rel="stylesheet" href="./CSS_Folder/all.min.css" />
+    <!-- Css Link  -->
+    <link rel="stylesheet" href="./CSS_Folder/Main.css" />
+  </head>
+  <body>
+    <div class="control-buttons">
+      <span>Start Game </span>
+    </div>
+    <div class="info-container">
+      <div class="name">Hello: <span></span></div>
+      <div class="timer"><span></span>s</div>
+      <div class="tries">Wrong Tries : <span>0</span></div>
+    </div>
+    <div class="memory-game-blocks">
+      <!-- 1 -->
+      <div class="game-block" data-img="code">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-solid fa-code fa-flip-horizontal"></i>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="game-block" data-img="youtube">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="game-block" data-img="facebook">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+      </div>
+      <!-- 4 -->
+      <div class="game-block" data-img="heart">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+      </div>
+      <!-- 5 -->
+      <div class="game-block" data-img="smile">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-regular fa-face-smile"></i>
+        </div>
+      </div>
+      <!-- 6-->
+      <div class="game-block" data-img="islam">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-solid fa-kaaba"></i>
+        </div>
+      </div>
+      <!-- 7 -->
+      <div class="game-block" data-img="feuille">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-solid fa-cannabis"></i>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div class="game-block" data-img="fish">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-solid fa-fish"></i>
+        </div>
+      </div>
+      <!-- 9 -->
+      <div class="game-block" data-img="cat">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-solid fa-cat"></i>
+        </div>
+      </div>
+      <!-- 10 -->
+      <div class="game-block" data-img="plane">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-solid fa-plane"></i>
+        </div>
+      </div>
+      <!--  -->
+      <!-- 1 -->
+      <div class="game-block" data-img="code">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-solid fa-code fa-flip-horizontal"></i>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="game-block" data-img="youtube">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="game-block" data-img="facebook">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+      </div>
+      <!-- 4 -->
+      <div class="game-block" data-img="heart">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+      </div>
+      <!-- 5 -->
+      <div class="game-block" data-img="smile">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-regular fa-face-smile"></i>
+        </div>
+      </div>
+      <!-- 6-->
+      <div class="game-block" data-img="islam">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-solid fa-kaaba"></i>
+        </div>
+      </div>
+      <!-- 7 -->
+      <div class="game-block" data-img="feuille">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-solid fa-cannabis"></i>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div class="game-block" data-img="fish">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-solid fa-fish"></i>
+        </div>
+      </div>
+      <!-- 9 -->
+      <div class="game-block" data-img="cat">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-solid fa-cat"></i>
+        </div>
+      </div>
+      <!-- 10 -->
+      <div class="game-block" data-img="plane">
+        <div class="face front">
+          <i class="fa-solid fa-question"></i>
+        </div>
+        <div class="face back">
+          <i class="fa-solid fa-plane"></i>
+        </div>
+      </div>
+      <!--  -->
+    </div>
+    <!-- Audio Discription  -->
+    <audio id="success" src="./Music/Success  Sound Effect.mp3"></audio>
+    <audio id="fail" src="./Music/Fail sound effect.mp3"></audio>
+    <audio id="calm" src="./Music/calm.mp3"></audio>
+
+    <!-- Js Source  -->
+    <script src="main.js"></script>
+  </body>
+</html>
