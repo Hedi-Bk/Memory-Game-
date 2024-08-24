@@ -1,38 +1,70 @@
-//Give Your NAME To Start The Game
-document.querySelector(".control-buttons span").onclick = function () {
-  let yourName = prompt("Give Me Your Name ");
-  if (yourName == "" || yourName == null) {
-    document.querySelector(".name span").innerHTML = "Unknown";
-  } else {
-    document.querySelector(".name span").innerHTML = yourName;
-  }
-  document.querySelector(".control-buttons").remove();
-  //Timer
-
-  let music = document.getElementById("calm");
-  let myTimerSpan = document.querySelector(".timer span");
-  //music.play();
-  let timerDuration = Math.floor(music.duration);
-  myTimerSpan.innerHTML = timerDuration;
-  setInterval(() => {
-    if (parseInt(myTimerSpan.innerHTML) > 0) {
-      myTimerSpan.innerHTML = parseInt(myTimerSpan.innerHTML) - 1;
+//Give Your NAME ~~Start() Function
+function start() {
+  document.querySelector(".control-buttons span").onclick = function () {
+    var yourName = prompt("Give Me Your Name ");
+    if (yourName == "" || yourName == null) {
+      document.querySelector(".name span").innerHTML = "Unknown";
     } else {
-      myTimerSpan.innerHTML = 0;
-      alert("Time's up!");
+      document.querySelector(".name span").innerHTML = yourName;
     }
-  }, 1000);
-};
+    document.querySelector(".control-buttons").remove();
+
+    // Set Timer
+    let music = document.getElementById("calm");
+    let myTimerSpan = document.querySelector(".timer span");
+    music.play();
+    let timerDuration = Math.floor(music.duration) - 110;
+
+    myTimerSpan.innerHTML = timerDuration;
+
+    //How To End game
+
+    let timerInterval = setInterval(() => {
+      let currentTime = parseInt(myTimerSpan.innerHTML);
+
+      if (currentTime > 0 && endGame()) {
+        myTimerSpan.innerHTML = parseInt(myTimerSpan.innerHTML);
+        document.body.appendChild(endContainer);
+        endMessage.textContent = "Congarts You Win !!!";
+        endTries.textContent = ` You Won and ${myTimerSpan.innerHTML} Seconds Left  `;
+        clearInterval(timerInterval);
+      } else if (currentTime > 0 && endGame() == false) {
+        // Continuer à décrémenter le timer
+        myTimerSpan.innerHTML = currentTime - 1;
+      } else {
+        myTimerSpan.innerHTML = "0";
+        document.body.appendChild(endContainer);
+        endMessage.textContent = `You "${myName.innerHTML}" The Looooser!!! `;
+        endTries.textContent = ` You Did ${triesElements.innerHTML} tries `;
+        //Add End Music
+        music.pause();
+        document.getElementById("fail").play();
+        //
+        clearInterval(timerInterval);
+      }
+    }, 1000);
+  };
+}
+//Triger The Start Function
+start();
 
 //Settings
 let duration = 1000;
 let blocksContainer = document.querySelector(".memory-game-blocks");
-
 let blocks = Array.from(blocksContainer.children);
-console.log(blocks);
-
 let orderRange = [...blocks.keys()];
 //let orderRange2 = [...Array(25).keys()];
+
+let endContainer = document.getElementsByClassName("end-game")[0];
+let endMessage = document.querySelector(".message");
+let endTries = document.querySelector(".tries-num");
+endContainer.remove();
+//
+let myTimerSpan = document.querySelector(".timer span");
+//
+let triesElements = document.querySelector(".tries span");
+//
+let myName = document.querySelector(".name span");
 
 //Add Orders To Blocks
 blocks.forEach((block) => {
@@ -99,13 +131,16 @@ function checkMatchedBlocks(firstBlock, secondBlock) {
       firstBlock.classList.remove("is-flipped");
       secondBlock.classList.remove("is-flipped");
     }, duration);
-    //  document.getElementById("fail").play();
-    setTimeout(() => {
-      document.getElementById("fail").pause();
-      document.getElementById("fail").currentTime = 0;
-    }, 3500);
   }
 }
-/*
 
-*/
+//Function To endGame
+function endGame() {
+  let test = true;
+  for (let i = 0; i < blocks.length; i++) {
+    if (!blocks[i].classList.contains("has-match")) {
+      test = false;
+    }
+  }
+  return test;
+}
